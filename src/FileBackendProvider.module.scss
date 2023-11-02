@@ -1,0 +1,73 @@
+.backupProviderButtons {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.fileBackendProviderRoot {
+  --web-ide-windows-gap: 0.5rem;
+  --web-ide-windows-border: 1px solid #b8b8b8;
+  --web-ide-windows-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 2px;
+  --web-ide-windows-border-radius: 6px;
+  --web-ide-padding-top: 0;
+  --web-ide-padding-bottom: 0;
+  --web-ide-padding-left: 0;
+  --web-ide-padding-right: 0;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 40px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+}
+
+.fileBackendProviderStatement {
+  display: grid;
+  gap: var(--web-ide-windows-gap);
+  overflow-y: hidden;
+  & > * {
+    --windows-border: var(--web-ide-windows-border);
+    --windows-box-shadow: var(--web-ide-windows-box-shadow);
+    --windows-border-radius: var(--web-ide-windows-border-radius);
+  }
+}
+
+.fileBackendProviderPreviewModeAlert {
+  padding-top: 0;
+  padding-bottom: 1px;
+}
+
+.fileBackendProviderMain {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: var(--web-ide-windows-gap);
+  padding: var(--web-ide-windows-gap);
+  padding-bottom: 0;
+  overflow: hidden;
+  *[statement-visible="true"] > & {
+    grid-template-columns: calc(300px + 20%) 1fr;
+  }
+}
+
+.fileBackendProviderContent {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.fileBackendProviderToolbar {
+  padding-left: var(--web-ide-windows-gap);
+  padding-right: var(--web-ide-windows-gap);
+  display: flex;
+  align-items: center;
+}
